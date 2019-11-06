@@ -1,0 +1,55 @@
+@charset "UTF-8";
+
+.post.repost.share .header .user::after{
+    content: '分享了';
+	margin-left: 3px;
+	color: #4f4f4f;
+}
+
+
+.content .target{
+    background-color: rgba(var(--background), 0.12);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.content .target .content{
+    margin: 0;
+    display: flex;
+    padding: 10px;
+    align-items: center;
+}
+
+.content .target .content .thumbnail{
+    flex: none;
+    width: 42px;
+    height: 42px;
+    margin-right: 10px;
+    background-size: cover;
+    background-position: center;
+}
+
+.content .target .content .text{
+    line-height: initial;
+    font-size: 14px;
+    color: #b4b4b4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    /* autoprefixer: off */
+	-webkit-box-orient: vertical;
+	/* autoprefixer: on */
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.content .target .topic{
+    height: 26px;
+    font-size: 12px;
+    margin: 0 10px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    color: #848484;
+    box-sizing: border-box;
+    border-top: 1px solid #4a4a4a;
+}

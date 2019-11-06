@@ -1,0 +1,62 @@
+.home {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.title-bar {
+    /* padding-top: 24px; */
+    flex: none;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background-color: inherit;
+    background-clip: content-box;
+}
+
+.title-bar .logo,
+.title-bar button {
+    mask-repeat: no-repeat;
+    mask-position: center;
+    /* background-color: rgba(0, 0, 0, 0.8); */
+    background-color: white;
+}
+
+.title-bar .logo {
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    mask-image: url(../assets/ic_title_logo.png);
+    mask-size: 74px;
+    width: 80px;
+    height: 40px;
+}
+
+.title-bar button {
+    width: 48px;
+    height: 48px;
+    mask-size: var(--size) var(--size);
+}
+
+.title-bar button:nth-of-type(2) {
+    margin-left: auto;
+    margin-right: 5px;
+}
+
+.title-bar button.diary{
+    mask-image: url(../assets/ic_navbar_camera.png);
+    --size: 24px;
+}
+
+.title-bar button.search{
+    mask-image: url(../assets/ic_navbar_search.png);
+    --size: 22px;
+}
+
+.title-bar button.message{
+    mask-image: url(../assets/ic_tabbar_chat_unselected.png);
+    --size: 24px;
+}

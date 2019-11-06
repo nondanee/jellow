@@ -1,0 +1,43 @@
+@charset "UTF-8";
+
+.content .target.link {
+    background-color: rgba(var(--background), 0.04);
+    /* margin-top: 14px !important; */
+}
+
+.content .target.link.audio {
+    background-color: rgba(var(--background), 0.14);
+}
+
+.content .target.link.audio .content {
+    padding: 0;
+    height: 74px;
+}
+
+.content .target.link.audio .cover {
+    width: 74px;
+    height: 74px;
+    background-size: cover;
+}
+
+.content .target.link.audio .text {
+    height: 100%;
+    margin-left: 16px;
+    flex: auto;
+    width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.content .target.link.audio .title {
+    margin-top: 15px;
+    color: #b4b4b4;
+    font-size: 16px;
+}
+
+.content .target.link.audio .artist {
+    margin-bottom: 14px;
+    color: #848484;
+    font-size: 14px;
+}
