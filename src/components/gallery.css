@@ -14,25 +14,6 @@
     object-fit: cover;
 }
 
-.gallery:not([box = '1']) img {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-}
-
-.gallery:not([box = '1']) .wrap {
-    overflow: hidden;
-    box-sizing: border-box;
-    height: 0;
-    width: var(--proportion);
-    padding-bottom: var(--proportion);
-}
-
-.gallery:not([box = '1']) {
-    border-radius: 10px;
-    overflow: hidden;
-}
-
 .gallery[box = '1'] .wrap {
     border-radius: 10px;
     overflow: hidden;
@@ -45,104 +26,61 @@
     min-height: 105px;
 }
 
-
-.gallery[box = '2'] .wrap {
-    --proportion: calc((100% - 1px) / 2);
+.gallery:not([box = '1']) {
+    display: grid;
+    grid-gap: 1px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
-.gallery[box = '2'] .wrap:nth-of-type(n + 2) {
-    margin-left: 1px;
-}
-
-
-.gallery[box = '3'] .wrap {
-    --proportion: calc((100% - 2px) / 3);
-}
-.gallery[box = '3'] .wrap:nth-of-type(2) {
-    margin-left: 1px;
-    margin-right: 1px;
-}
-
-
-.gallery[box = '4'] .wrap {
-    --proportion: calc((100% - 2px) / 3);
-}
-
-.gallery[box = '4'] .wrap:nth-of-type(1) {
-    --proportion: calc(100% / 2);
+.gallery:not([box = '1']) .wrap {
+    position: relative;
     width: 100%;
-    margin-bottom: 1px;
+    height: 0;
+    padding-bottom: 100%;
+    overflow: hidden;
 }
 
-.gallery[box = '4'] .wrap:nth-of-type(3) {
-    margin-left: 1px;
-    margin-right: 1px;
-}
-
-
-.gallery[box = '5'] .wrap:nth-of-type(n - 2) {
-    --proportion: calc((100% - 1px) / 2);
-    margin-bottom: 1px;
-}
-
-.gallery[box = '5'] .wrap:nth-of-type(2) {
-    margin-left: 1px;
-}
-
-.gallery[box = '5'] .wrap:nth-of-type(n + 3) {
-    --proportion: calc((100% - 2px) / 3);
-}
-
-.gallery[box = '5'] .wrap:nth-of-type(4) {
-    margin-left: 1px;
-    margin-right: 1px;
-}
-
-
-.gallery[box = '6'] .wrap {
-    --proportion: calc((100% - 2px) / 3);
-}
-
-.gallery[box = '6'] .wrap:nth-of-type(-n + 3) {
-    margin-bottom: 1px;
-}
-
-.gallery[box = '6'] .wrap:nth-of-type(3n + 2) {
-    margin-left: 1px;
-    margin-right: 1px;
-}
-
-
-.gallery[box = '7'] .wrap {
-    --proportion: calc((100% - 2px) / 3);
-}
-
-.gallery[box = '7'] .wrap:nth-of-type(1) {
-    --proportion: calc(100% / 2);
+.gallery:not([box = '1']) img {
+    position: absolute;
+    height: 100%;
     width: 100%;
 }
 
-.gallery[box = '7'] .wrap:nth-of-type(3n) {
-    margin-left: 1px;
-    margin-right: 1px;
+.gallery[box = '2'] {
+    grid-template-columns: repeat(2, 1fr);
 }
 
-.gallery[box = '7'] .wrap:nth-child(n + 2):nth-child(-n + 4) {
-    margin-top: 1px;
-    margin-bottom: 1px;
+.gallery[box = '3'],
+.gallery[box = '6'],
+.gallery[box = '9'] {
+    grid-template-columns: repeat(3, 1fr);
 }
 
-
-.gallery[box = '9'] .wrap {
-    --proportion: calc((100% - 2px) / 3);
+.gallery[box = '4'],
+.gallery[box = '7'] {
+    grid-template-columns: repeat(3, 1fr);
 }
 
-.gallery[box = '9'] .wrap:nth-of-type(3n + 2) {
-    margin-left: 1px;
-    margin-right: 1px;
+.gallery[box = '4'] .wrap:first-of-type,
+.gallery[box = '7'] .wrap:first-of-type {
+    padding-bottom: 50%;
+    grid-column-start: span 3;
 }
 
-.gallery[box = '9'] .wrap:nth-child(n + 4):nth-child(-n + 6) {
-    margin-top: 1px;
-    margin-bottom: 1px;
+.gallery[box = '5'],
+.gallery[box = '8'] {
+    grid-template-columns: repeat(6, 1fr);
+}
+
+.gallery[box = '5'] .wrap:nth-of-type(-n + 2),
+.gallery[box = '8'] .wrap:nth-of-type(-n + 2) {
+    grid-column-start: span 3;
+}
+
+.gallery[box = '5'] .wrap:nth-of-type(n + 3),
+.gallery[box = '8'] .wrap:nth-of-type(n + 3) {
+    grid-column-start: span 2;
 }
